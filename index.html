@@ -4,137 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReelyRated | Coming Soon</title>
-    <meta
-      name="description"
-      content="ReelyRated is coming soon. We’re building the home of social fishing."
-    />
-    <meta name="theme-color" content="#0a141f" />
+    <meta name="description" content="ReelyRated is coming soon." />
+    <meta name="theme-color" content="#061018" />
+    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet" />
+    <style>
+      :root { --bg:#061018; --bg2:#0b1721; --fg:#f4f8fb; --muted:#9db4bf; --accent:#4fb8a7; }
+      * { box-sizing:border-box; margin:0; }
+      body {
+        min-height:100svh; display:grid; place-items:center; overflow:hidden; padding:2rem;
+        background:
+          radial-gradient(circle at top, rgba(79,184,167,.16), transparent 30%),
+          radial-gradient(circle at bottom, rgba(38,104,140,.22), transparent 38%),
+          linear-gradient(180deg, var(--bg2), var(--bg));
+        color:var(--fg); font-family:"Manrope", sans-serif; text-align:center;
+      }
+      body::before {
+        content:""; position:fixed; inset:0; pointer-events:none; opacity:.22;
+        background:linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+        background-size:72px 72px; mask-image:radial-gradient(circle at center, #000 32%, transparent 78%);
+      }
+      main { display:grid; gap:1rem; place-items:center; width:min(100%, 34rem); }
+      img {
+        width:clamp(7rem, 22vw, 10.5rem); height:auto; object-fit:contain; margin-bottom:.5rem;
+        filter:drop-shadow(0 1.25rem 2.5rem rgba(79,184,167,.18));
+      }
+      h1 {
+        font-size:clamp(3rem, 10vw, 5.8rem); font-weight:800; letter-spacing:-.06em; line-height:.95;
+        text-wrap:balance;
+      }
+      p {
+        color:var(--muted); font:500 clamp(1.15rem, 3.4vw, 1.7rem)/1.1 "Cormorant Garamond", serif;
+        letter-spacing:.12em; text-transform:uppercase;
+      }
+      @media (max-width: 480px) { body { padding:1.5rem; } p { letter-spacing:.1em; } }
+    </style>
   </head>
   <body>
-    <div class="page-shell">
-      <div class="background-orb background-orb-left" aria-hidden="true"></div>
-      <div class="background-orb background-orb-right" aria-hidden="true"></div>
-
-      <header class="topbar">
-        <div class="brand" aria-label="ReelyRated">
-          <div class="brand-mark" aria-hidden="true">
-            <span>RR</span>
-          </div>
-          <div class="brand-copy">
-            <strong>ReelyRated</strong>
-            <span>Social fishing, refined.</span>
-          </div>
-        </div>
-
-        <div class="status-pill">Private testing in progress</div>
-      </header>
-
-      <main class="hero-grid">
-        <section class="panel hero-copy" aria-labelledby="coming-soon-title">
-          <div class="eyebrow">Coming Soon</div>
-
-          <h1 id="coming-soon-title">
-            The next home for
-            <span>social fishing</span>
-          </h1>
-
-          <p class="lede">
-            We’re building ReelyRated to feel like the best part of a session:
-            clean, social, and worth coming back to. A sharper place to share
-            catches, track memorable days on the water, and stay close to the
-            people who fish the same way you do.
-          </p>
-
-          <div class="feature-row" aria-label="ReelyRated highlights">
-            <div class="feature-pill">Premium mobile-first feel</div>
-            <div class="feature-pill">Built for waterside stories</div>
-            <div class="feature-pill">Private launch in progress</div>
-          </div>
-
-          <div
-            class="interest-card"
-            role="group"
-            aria-labelledby="interest-title"
-          >
-            <div class="interest-copy">
-              <p id="interest-title">Stay close</p>
-              <span>Interest signups will open here soon.</span>
-            </div>
-
-            <div class="interest-form-preview">
-              <input
-                type="email"
-                placeholder="Interest signups opening soon"
-                aria-label="Email signup preview"
-                disabled
-              />
-              <button type="button" disabled>Notify me</button>
-            </div>
-
-            <p class="interest-note">
-              Static preview only. Private testing is currently in progress.
-            </p>
-          </div>
-        </section>
-
-        <aside class="panel showcase" aria-label="Brand preview">
-          <div class="showcase-header">
-            <div>
-              <p class="showcase-label">ReelyRated Preview</p>
-              <h2>Made to feel calm, sharp, and premium on the water.</h2>
-            </div>
-            <div class="showcase-badge">Early Access</div>
-          </div>
-
-          <div class="mock-card">
-            <div class="mock-media">
-              <div class="mock-media-glow"></div>
-              <div class="mock-overlay">
-                <span class="mock-kicker">Session Story</span>
-                <strong
-                  >A cleaner place to keep the catches that matter.</strong
-                >
-              </div>
-            </div>
-
-            <div class="mock-body">
-              <div class="mock-profile">
-                <div class="mock-avatar"></div>
-                <div>
-                  <p class="mock-name">Crew-led fishing, not clutter.</p>
-                  <span class="mock-meta">Designed for detail and rhythm</span>
-                </div>
-              </div>
-
-              <div class="mock-stats">
-                <div class="mock-stat">
-                  <span>Stories</span>
-                  <strong>Sharper</strong>
-                </div>
-                <div class="mock-stat">
-                  <span>Community</span>
-                  <strong>Closer</strong>
-                </div>
-                <div class="mock-stat">
-                  <span>Feel</span>
-                  <strong>Premium</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p class="showcase-note">
-            Public launch details will appear here once private testing wraps.
-          </p>
-        </aside>
-      </main>
-    </div>
+    <main>
+      <img src="favicon.ico" alt="ReelyRated logo" />
+      <h1>Coming Soon</h1>
+      <p>Freshwater Socials</p>
+    </main>
   </body>
 </html>
