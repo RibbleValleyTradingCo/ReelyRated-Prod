@@ -6,7 +6,6 @@
     <title>ReelyRated | Coming Soon</title>
     <meta name="description" content="ReelyRated is coming soon." />
     <meta name="theme-color" content="#061018" />
-    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet" />
@@ -28,9 +27,31 @@
         background-size:72px 72px; mask-image:radial-gradient(circle at center, #000 32%, transparent 78%);
       }
       main { display:grid; gap:1rem; place-items:center; width:min(100%, 34rem); }
-      img {
-        width:clamp(7rem, 22vw, 10.5rem); height:auto; object-fit:contain; margin-bottom:.5rem;
+      .brand {
+        display:inline-flex; align-items:center; gap:1rem; margin-bottom:.5rem;
         filter:drop-shadow(0 1.25rem 2.5rem rgba(79,184,167,.18));
+      }
+      .logo-mark {
+        position:relative; display:grid; place-items:center; width:clamp(4.25rem, 12vw, 5.5rem); aspect-ratio:1;
+        border-radius:999px; color:#ecfffb; overflow:hidden;
+        background:linear-gradient(135deg, #38a8ff 0%, #2a8fff 45%, #4fb8a7 100%);
+        box-shadow:0 1rem 2rem rgba(10, 23, 33, .42);
+      }
+      .logo-mark::before {
+        content:""; position:absolute; inset:0; border-radius:inherit;
+        background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 60%);
+      }
+      .logo-icon {
+        position:relative; z-index:1; width:55%; height:55%; fill:none; stroke:currentColor;
+        stroke-linecap:round; stroke-linejoin:round; stroke-width:2.5;
+      }
+      .brand-copy { text-align:left; }
+      .brand-name {
+        display:block; color:var(--fg); font-size:clamp(1.3rem, 3vw, 1.8rem);
+        font-weight:700; letter-spacing:-.04em;
+      }
+      .brand-tag {
+        display:block; color:var(--muted); font-size:.7rem; letter-spacing:.32em; text-transform:uppercase;
       }
       h1 {
         font-size:clamp(3rem, 10vw, 5.8rem); font-weight:800; letter-spacing:-.06em; line-height:.95;
@@ -40,12 +61,29 @@
         color:var(--muted); font:500 clamp(1.15rem, 3.4vw, 1.7rem)/1.1 "Cormorant Garamond", serif;
         letter-spacing:.12em; text-transform:uppercase;
       }
-      @media (max-width: 480px) { body { padding:1.5rem; } p { letter-spacing:.1em; } }
+      @media (max-width: 480px) {
+        body { padding:1.5rem; }
+        .brand { gap:.8rem; }
+        .brand-tag { font-size:.62rem; letter-spacing:.24em; }
+        p { letter-spacing:.1em; }
+      }
     </style>
   </head>
   <body>
     <main>
-      <img src="favicon.ico" alt="ReelyRated logo" />
+      <div class="brand" aria-label="ReelyRated">
+        <div class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="logo-icon">
+            <path d="M2 6c.6.5 1.2 1 2.5 1 2.4 0 2.4-2 4.8-2s2.4 2 4.8 2 2.4-2 4.8-2c1.3 0 1.9.5 2.5 1" />
+            <path d="M2 12c.6.5 1.2 1 2.5 1 2.4 0 2.4-2 4.8-2s2.4 2 4.8 2 2.4-2 4.8-2c1.3 0 1.9.5 2.5 1" />
+            <path d="M2 18c.6.5 1.2 1 2.5 1 2.4 0 2.4-2 4.8-2s2.4 2 4.8 2 2.4-2 4.8-2c1.3 0 1.9.5 2.5 1" />
+          </svg>
+        </div>
+        <div class="brand-copy">
+          <span class="brand-name">ReelyRated</span>
+          <span class="brand-tag">Freshwater Social</span>
+        </div>
+      </div>
       <h1>Coming Soon</h1>
       <p>Freshwater Socials</p>
     </main>
